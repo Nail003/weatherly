@@ -2,6 +2,7 @@
 const searchForm = document.getElementsByClassName("search-form")[0]
 const weatherLocation = document.getElementsByClassName("weather-container__location")[0]
 const [tempCelcius, tempFahrenheit] = document.getElementsByClassName("weather-container__temperature")
+const weatherDate = document.getElementsByClassName("weather-container__last-updated")[0]
 
 // Add Event Listeners for search form
 searchForm.addEventListener("submit", handleSearchFormSubmit(getWeather))
@@ -48,16 +49,16 @@ async function getWeather(city = "Islamabad") {
 
         // Extract Data
         const { country, name } = response.location
-        const { temp_c, temp_f } = response.current
+        const { temp_c, temp_f, last_updated } = response.current
 
         // Process Data
         const location = getLocation(country, name)
 
         // Return weather data
-        return { location, tempC: temp_c, tempF: temp_f }
-    } catch (e) {
+        return { location, tempC: temp_c, tempF: temp_f, lastUpdated: last_updated }
+    } catch (_e) {
         // Error handler
-        console.log(Error(e));
+        throw (Error("Could not fetch the data"))
     }
 }
 
@@ -66,10 +67,11 @@ function getLocation(country, city) {
     return `${city}, ${country}`
 }
 
-function renderWeatherData({ location, tempC, tempF }) {
+function renderWeatherData({ location, tempC, tempF, lastUpdated }) {
     weatherLocation.textContent = location
     tempCelcius.innerHTML = `${tempC}&degC`
     tempFahrenheit.innerHTML = `${tempF}&degF`
+    weatherDate.textContent = `Last Updated: ${lastUpdated}`
 }
 
 function renderLoadingScreen() {
@@ -78,4 +80,5 @@ function renderLoadingScreen() {
     weatherLocation.textContent = loadingMessage
     tempCelcius.innerHTML = loadingMessageSmall
     tempFahrenheit.innerHTML = loadingMessageSmall
+    weatherDate.textContent = loadingMessageSmall
 }
