@@ -58,7 +58,9 @@ async function getWeather(city = "Islamabad") {
         return { location, tempC: temp_c, tempF: temp_f, lastUpdated: last_updated }
     } catch (_e) {
         // Error handler
-        throw (Error("Could not fetch the data"))
+        const errorMessage = "Error: Wrong input or network error"
+        alert(errorMessage)
+        throw (Error(errorMessage))
     }
 }
 
