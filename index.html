@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weatherly</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script defer src="./javascript.js"></script>
+    </head>
+    <body>
+        <header>
+            <form class="search-form" action="">
+                <input
+                    type="text"
+                    name="search"
+                    id="search"
+                    placeholder="search city name i.e london"
+                    required
+                    maxlength="512"
+                />
+                <button class="search-form__search-button">Search</button>
+            </form>
+        </header>
+        <main>
+            <div class="weather-container">
+                <h1 class="weather-container__location">
+                    London, United Kingdom
+                </h1>
+                <div class="temperature-container">
+                    <h1
+                        class="weather-container__temperature weather-container__temperature--celcius"
+                    >
+                        32&degC
+                    </h1>
+                    <h1 class="weather-container__temperature">53.6&degF</h1>
+                </div>
+                <h4 class="weather-container__last-updated">
+                    Last Updated: 2024-06-10 11:30
+                </h4>
+            </div>
+        </main>
+    </body>
+</html>

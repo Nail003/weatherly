@@ -1,0 +1,125 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+:root {
+    --black: hsl(0, 0%, 10%);
+
+    --grey-dark: hsl(0, 0%, 15%);
+    --grey: hsl(0, 0%, 30%);
+    --grey-light: hsl(0, 0%, 45%);
+    --grey-highlight: hsl(0, 0%, 60%);
+
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--black);
+}
+
+header {
+    background-color: var(--grey-dark);
+    box-shadow: 0px 0px 8px black;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+
+    padding: 8px;
+}
+
+.search-form input {
+    min-width: 256px;
+    width: 50%;
+    padding: 8px;
+
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--grey);
+
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 2px 0px 0px 2px;
+}
+
+.search-form input:focus {
+    background-color: var(--grey);
+}
+
+.search-form input::placeholder {
+    color: var(--grey-highlight);
+}
+
+.search-form__search-button {
+    padding: 0 16px;
+    border: none;
+    border-radius: 0px 2px 2px 0px;
+
+    font-size: 1rem;
+    color: white;
+
+    background-color: var(--grey-light);
+    cursor: pointer;
+}
+
+.search-form__search-button:hover {
+    background-color: var(--grey-highlight);
+}
+
+.weather-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    display: flex;
+    flex-direction: column;
+
+    width: clamp(45ch, 90%, 75ch);
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    box-shadow: 0 4px 32px black;
+    background-color: var(--grey-dark);
+
+    letter-spacing: 1px;
+    word-spacing: 8px;
+}
+
+.weather-container__location {
+    text-align: center;
+    border-bottom: 2px solid var(--grey-light);
+}
+
+.temperature-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-container__temperature {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0px;
+
+    font-size: 4rem;
+}
+
+.weather-container__temperature--celcius {
+    border-right: 2px solid var(--grey-light);
+}
+
+.weather-container__last-updated {
+    border-top: 2px solid var(--grey-light);
+    padding-top: 8px;
+    text-align: right;
+}
