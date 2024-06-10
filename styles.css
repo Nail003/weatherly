@@ -8,22 +8,36 @@
 
 :root {
     --black: hsl(0, 0%, 10%);
+    --black-pure: hsl(0, 0%, 0%);
 
     --grey-dark: hsl(0, 0%, 15%);
+    --grey-dark-glass: hsla(0, 0%, 15%, 0.8);
     --grey: hsl(0, 0%, 30%);
     --grey-light: hsl(0, 0%, 45%);
     --grey-highlight: hsl(0, 0%, 60%);
 
     --white: #ffffff;
+    --white-glass: #ffffff40;
+
+    --blue-dark: hsl(240, 100%, 5%);
 }
 
 body {
     background-color: var(--black);
+    background-color: var(--blue-dark);
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
 header {
     background-color: var(--grey-dark);
-    box-shadow: 0px 0px 8px black;
+    background-color: var(--grey-dark-glass);
+    box-shadow: 0px 0px 8px var(--black-pure);
 }
 
 .search-form {
@@ -87,8 +101,9 @@ header {
     padding: 8px 16px;
     border-radius: 4px;
 
-    box-shadow: 0 4px 32px black;
+    box-shadow: 0 4px 32px var(--black-pure);
     background-color: var(--grey-dark);
+    background-color: var(--white-glass);
 
     letter-spacing: 1px;
     word-spacing: 8px;
