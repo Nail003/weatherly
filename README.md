@@ -21,7 +21,6 @@ Experience Weatherly live: [Weatherly Live](https://nail003.github.io/weatherly)
 - **Real-Time Weather Data:** Get up-to-date weather information for any location.
 - **Intuitive Interface:** Enjoy a clean and easy-to-navigate design.
 - **Responsive Design:** Seamlessly use the app on desktops, tablets, and mobile devices.
-- **Detailed Forecasts:** Access comprehensive weather details including temperature, humidity, wind speed, and more.
 
 ## Installation
 
